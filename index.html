@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
     <!-- Vue Instance -->
 
@@ -14,13 +16,23 @@
         <h1>{{name}}</h1>
     </div> -->
 
-    <!-- Data and methods -->
+    <!-- Data and methods-->
 
-    <div id="app">
+    <!-- <div id="app">
         <h1>{{greet("Evening")}}</h1>
         <p>Name : {{name}}</p>
         <p>Job : {{job}}</p>
+    </div> -->
+
+    <!-- Data Binding -->
+
+    <div id="app">
+        <h1>Data Binding</h1>
+        <a v-bind:href="website">google</a>
+        <input type="text" v-bind:value="name">
     </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
