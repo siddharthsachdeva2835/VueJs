@@ -26,14 +26,44 @@
 
     <!-- Data Binding -->
 
-    <div id="app">
+    <!-- <div id="app">
         <h1>Data Binding</h1>
         <a v-bind:href="website">google</a>
         <input type="text" v-bind:value="name">
         <p v-html="websitetag"></p>
+    </div> -->
+
+    <!-- Events -->
+
+    <div id="app">
+        <h1>Events</h1>
+        
+        <!-- <button v-on:click="age++">Add a Year</button>
+        <button @click="age--">Subtract a Year</button> -->
+        
+        <!-- parentheses are not needed if there are no args -->
+        <!-- <button v-on:click="add">Add a Year</button>
+        <button @click="subtract">Subtract a Year</button> -->
+        
+        <button v-on:click="add(1)">Add a Year</button>
+        <button @click="subtract(1)">Subtract a Year</button>
+        <button v-on:dblclick="add(10)">Add a Year</button>
+        <button @dblclick="subtract(10)">Subtract a Year</button>
+        <p>my age is {{age}}</p>
+        <div id="canvas" v-on:mousemove="updatexy">
+            {{x}} , {{y}}
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 
+<style>
+    #canvas {
+        width: 500px;
+        padding: 200px 20px;
+        text-align: center;
+        border:2px solid #333;
+    }
+</style>
 </html>
