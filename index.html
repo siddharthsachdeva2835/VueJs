@@ -168,12 +168,24 @@
 
     <!-- Dynamic CSS -->
 
-    <div id="app">
+    <!-- <div id="app">
         <h1>Dynamic CSS</h1>
         <h2 v-bind:class={red:red}>Siddharth</h2>
         <button v-on:click="red=!red">Color-R</button>
         <h2 v-bind:class="compColor">Sachdeva</h2>
         <button v-on:click="green=!green">Color-G</button>
+    </div> -->
+
+    <!-- Conditionals -->
+
+    <div id="app">
+        <h1>Conditionals</h1>
+        <button v-on:click="error = !error">Toggle error</button>
+        <button v-on:click="success = !success">Toggle Succuss</button>
+        <p v-if="error">there has been an error!!</p>
+        <p v-else-if="success">successsss!!!</p>
+
+        <p v-show="success"> Download file </p>
     </div>
 
     <script src="script.js"></script>
