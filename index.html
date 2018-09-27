@@ -59,10 +59,10 @@
 
     <div id="app">
         <h1>Events</h1>
-        
+
         <!-- the button can be only clicked once  -->
         <button v-on:click.once="add(1)">Add a Year (once)</button>
-        
+
         <!-- stop - Prevents event bubbling up the DOM tree.  -->
         <div v-on:click="add(1)" style="border: 1px solid red;padding:2px;">
             Add a Year
@@ -70,13 +70,51 @@
                 add (no-bubbling)
             </div>
             <div v-on:click="add(2)" style="border: 1px solid blue;padding:2px;">
-                    add (with-bubbling)
-                </div>
+                add (with-bubbling)
+            </div>
         </div>
 
-        <button @click="subtract(1)">Subtract a Year</button>
-        <button v-on:dblclick="add(10)">Add a Year</button>
-        <button @dblclick="subtract(10)">Subtract a Year</button>
+        <!-- the submit event will no longer reload the page -->
+        <form>
+            <!-- If the button is within a form, the default behavior is submit i.e to relaod the page.
+            If the button is not within a form, it will do nothing. -->
+            <input type="submit" value="Add Years (page reloads)">
+            <!-- the function add(3) is executed but the default behavior to reload is prevented -->
+            <input type="submit" v-on:click.prevent="add(3)" value="Add Years (prevents reload)">
+        </form>
+
+        <!-- use capture mode when adding the event listener -->
+        <!-- i.e. an event targeting an inner element is handled here before being handled by that element -->
+        <!-- note that in first div add(10) is executed first whereas in case of second div add(20) is executed first -->
+        <div v-on:click.capture="add(10)" style="border: 1px solid red;padding:2px;">
+            Add Years
+            <div v-on:click="add(20)" style="border: 1px solid green;padding:2px;">
+                add (capturing)
+            </div>
+        </div>
+        <div v-on:click="add(10)" style="border: 1px solid red;padding:2px;">
+            Add Years
+            <div v-on:click="add(20)" style="border: 1px solid green;padding:2px;">
+                add (normal capturing)
+            </div>
+        </div>
+
+        <!-- only trigger event handler if event.target is the element itself -->
+        <!-- i.e. not from a child/inner element -->
+        <div v-on:click.self="add(10)" style="border: 1px solid red;padding:2px;">
+            Add Years
+            <div v-on:click="add(20)" style="border: 1px solid green;padding:2px;">
+                add (self)
+            </div>
+        </div>
+
+        <!-- Modifiers can be chained -->
+        <div v-on:click.self.once="add(10)" style="border: 1px solid red;padding:2px;">
+            Add Years
+            <div v-on:click="add(20)" style="border: 1px solid green;padding:2px;">
+                add (self once)
+            </div>
+        </div>
         <p>my age is {{age}}</p>
     </div>
 
@@ -90,7 +128,8 @@
         width: 500px;
         padding: 200px 20px;
         text-align: center;
-        border:2px solid #333;
+        border: 2px solid #333;
     }
 </style>
+
 </html>
