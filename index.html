@@ -178,7 +178,7 @@
 
     <!-- Conditionals -->
 
-    <div id="app">
+    <!-- <div id="app">
         <h1>Conditionals</h1>
         <button v-on:click="error = !error">Toggle error</button>
         <button v-on:click="success = !success">Toggle Succuss</button>
@@ -186,8 +186,34 @@
         <p v-else-if="success">successsss!!!</p>
 
         <p v-show="success"> Download file </p>
-    </div>
+    </div> -->
 
+    <!-- Looping -->
+
+    <!-- <div id="app">
+        <h1>Looping</h1>
+        <ul>
+            <li v-for="character in characters"> 
+                <h3>{{character}}</h3>
+            </li>
+        </ul>
+       
+        div will be the outer tag
+        <div v-for="(person,index) in persons"> 
+            <h3>{{index}}. {{person.name}} : {{person.age}}</h3>
+        </div>
+
+        there will be no outer tag
+        looping through the object
+         <template v-for="(person,index) in persons">
+            <div v-for="(val,key) in person">
+                <h4>{{key}}:{{val}}</h4>
+            </div>
+            
+         </template>
+    </div> -->
+
+    <div id="app"></div>
     <script src="script.js"></script>
 </body>
 
