@@ -57,13 +57,13 @@
 
     <!-- Events Modifiers-->
 
-    <div id="app">
+    <!-- <div id="app">
         <h1>Events</h1>
 
-        <!-- the button can be only clicked once  -->
+        the button can be only clicked once 
         <button v-on:click.once="add(1)">Add a Year (once)</button>
 
-        <!-- stop - Prevents event bubbling up the DOM tree.  -->
+        stop - Prevents event bubbling up the DOM tree. 
         <div v-on:click="add(1)" style="border: 1px solid red;padding:2px;">
             Add a Year
             <div v-on:click.stop="add(2)" style="border: 1px solid green;padding:2px;">
@@ -74,18 +74,18 @@
             </div>
         </div>
 
-        <!-- the submit event will no longer reload the page -->
+        the submit event will no longer reload the page
         <form>
-            <!-- If the button is within a form, the default behavior is submit i.e to relaod the page.
-            If the button is not within a form, it will do nothing. -->
+            If the button is within a form, the default behavior is submit i.e to relaod the page.
+            If the button is not within a form, it will do nothing.
             <input type="submit" value="Add Years (page reloads)">
-            <!-- the function add(3) is executed but the default behavior to reload is prevented -->
+            the function add(3) is executed but the default behavior to reload is prevented
             <input type="submit" v-on:click.prevent="add(3)" value="Add Years (prevents reload)">
         </form>
 
-        <!-- use capture mode when adding the event listener -->
-        <!-- i.e. an event targeting an inner element is handled here before being handled by that element -->
-        <!-- note that in first div add(10) is executed first whereas in case of second div add(20) is executed first -->
+        use capture mode when adding the event listener
+        i.e. an event targeting an inner element is handled here before being handled by that element
+        note that in first div add(10) is executed first whereas in case of second div add(20) is executed first
         <div v-on:click.capture="add(10)" style="border: 1px solid red;padding:2px;">
             Add Years
             <div v-on:click="add(20)" style="border: 1px solid green;padding:2px;">
@@ -99,8 +99,8 @@
             </div>
         </div>
 
-        <!-- only trigger event handler if event.target is the element itself -->
-        <!-- i.e. not from a child/inner element -->
+        only trigger event handler if event.target is the element itself
+        i.e. not from a child/inner element
         <div v-on:click.self="add(10)" style="border: 1px solid red;padding:2px;">
             Add Years
             <div v-on:click="add(20)" style="border: 1px solid green;padding:2px;">
@@ -108,7 +108,7 @@
             </div>
         </div>
 
-        <!-- Modifiers can be chained -->
+        Modifiers can be chained
         <div v-on:click.self.once="add(10)" style="border: 1px solid red;padding:2px;">
             Add Years
             <div v-on:click="add(20)" style="border: 1px solid green;padding:2px;">
@@ -116,9 +116,19 @@
             </div>
         </div>
         <p>my age is {{age}}</p>
+    </div> -->
+
+    
+    <!--Keyboard Events and modifiers-->
+
+    <div id="app">
+        <h1>Keyboard Events and Modifiers</h1>
+        
+        <label>Name (ENTER): </label>
+        <input type="text" v-on:keyup.enter="logName">
+        <label>Age (ALT+ENTER):</label>
+        <input type="text" v-on:keyup.alt.enter="logAge">
     </div>
-
-
 
     <script src="script.js"></script>
 </body>
