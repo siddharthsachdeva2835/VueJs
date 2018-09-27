@@ -166,7 +166,15 @@
 
     </div> -->
 
-    
+    <!-- Dynamic CSS -->
+
+    <div id="app">
+        <h1>Dynamic CSS</h1>
+        <h2 v-bind:class={red:red}>Siddharth</h2>
+        <button v-on:click="red=!red">Color-R</button>
+        <h2 v-bind:class="compColor">Sachdeva</h2>
+        <button v-on:click="green=!green">Color-G</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
@@ -177,6 +185,12 @@
         padding: 200px 20px;
         text-align: center;
         border: 2px solid #333;
+    }
+    .red {
+        color: red;
+    }
+    .green{
+        color:green;
     }
 </style>
 
