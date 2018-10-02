@@ -1,25 +1,28 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <h3>{{greeting()}}</h3>
+    <cobras></cobras>
   </div>
 </template>
 
 <script>
+//Locally registering a component 
+import Cobras from './Cobras.vue'
+
 export default {
+  components:{
+    'cobras':Cobras
+  },
   data () {
     return {
-     title:'My first Vue-CLI',
-     name:'Siddharth'
-    }
-  },
-  methods:{
-    greeting:function(){
-      return 'Good Moring ' + this.name 
+     title:'Cobra App',
     }
   }
 }
 </script>
 
 <style>
+h1{
+  color:blueviolet;
+}
 </style>
