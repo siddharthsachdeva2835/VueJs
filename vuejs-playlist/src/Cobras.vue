@@ -19,7 +19,14 @@ export default {
         cobras:['King Cobra','Samar Cobra','Indian Cobra']
     }
   },
-  props:['pythons'],
+  //props:['pythons'],
+  //props with validation
+  props:{
+    pythons:{
+      type:Array,
+      required:true
+    }
+  },
   methods:{
     test:function(){
       // props can directly accessed like a data element
