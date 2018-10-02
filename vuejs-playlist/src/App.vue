@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <cobras></cobras>
+    <cobras v-bind:pythons="pythons"></cobras>
   </div>
 </template>
 
@@ -16,6 +16,7 @@ export default {
   data () {
     return {
      title:'Cobra App',
+     pythons:['Ball Python','Carpet Python','Woma python']
     }
   }
 }

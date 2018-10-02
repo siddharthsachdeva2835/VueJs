@@ -1,9 +1,14 @@
 <template>
   <div>
-    <h1>List of cobras</h1>
+    <h1>List of Cobras</h1>
     <ul>
         <li v-for="cobra in cobras" :key='cobra'>{{cobra}}</li>
     </ul>
+    <h1>List of Pyhtons</h1>
+    <ul>
+        <li v-for="python in pythons" :key='python'>{{python}}</li>
+    </ul>
+    {{test()}}
   </div>
 </template>
 
@@ -12,6 +17,13 @@ export default {
   data () {
     return {
         cobras:['King Cobra','Samar Cobra','Indian Cobra']
+    }
+  },
+  props:['pythons'],
+  methods:{
+    test:function(){
+      // props can directly accessed like a data element
+      console.log(this.pythons); 
     }
   }
 }
