@@ -19,8 +19,10 @@ export default {
         cobras:['King Cobra','Samar Cobra','Indian Cobra']
     }
   },
-  //props:['pythons'],
-  //props with validation
+  
+  // props:['pythons'],
+
+  // props with validation
   props:{
     pythons:{
       type:Array,
