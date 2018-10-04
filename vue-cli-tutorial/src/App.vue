@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-   <app-header></app-header>
+   <app-header :desc="desc"></app-header>
    <todo-list></todo-list>
    <app-footer></app-footer>
   </div>
@@ -19,7 +19,7 @@ export default {
   },
   data () {
     return {
-
+      desc:'Data transfered from parent to child using props' 
     }
   }
 }
