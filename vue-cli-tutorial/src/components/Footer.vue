@@ -17,13 +17,7 @@
         },
         created () {
             bus.$on('changeDescription',(data) => {
-                console.log(this);
-                
-                console.log(this.desc);
-                
                 this.desc = data
-                console.log(this.desc);
-
             })
         }
     }
