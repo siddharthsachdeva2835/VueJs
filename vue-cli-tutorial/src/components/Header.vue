@@ -3,6 +3,7 @@
       <h1>{{title}}</h1>
       <h3>{{desc}}</h3>
       <button @click="changeDesc">CHANGE DESC</button>
+      <button @click="changeDescEverywhere">CHANGE DESC Everywhere</button>
   </header>
 </template>
 
@@ -18,6 +19,10 @@
             // desc is changed only in the header as it is a primitive type
             changeDesc : function(){
                 this.desc = 'Data transfered from App.vue to Header.vue using props' 
+            },
+
+            changeDescEverywhere : function() {
+                this.$emit('changeDesc','Description update in both header and footer using events')
             }
         }
     }

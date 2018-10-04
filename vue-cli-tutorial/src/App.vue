@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-   <app-header :desc="desc"></app-header>
+   <app-header :desc="desc" v-on:changeDesc="updateDesc($event)"></app-header>
    <todo-list></todo-list>
    <app-footer :desc="desc"></app-footer>
   </div>
@@ -20,6 +20,11 @@ export default {
   data () {
     return {
       desc:'Data transfered from parent to child using props' 
+    }
+  },
+  methods:{
+    updateDesc: function(e){
+      this.desc = e;
     }
   }
 }
