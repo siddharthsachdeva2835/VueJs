@@ -2,29 +2,35 @@
   <header>
       <h1>{{title}}</h1>
       <h3>{{desc}}</h3>
+      <button @click="changeDesc">CHANGE DESC</button>
   </header>
 </template>
 
 <script>
-export default {
-    props : ['desc'],
-    data () {
-        return {
-            title:'Vue Todos'
+    export default {
+        props : ['desc'],
+        data () {
+            return {
+                title:'Vue Todos'
+            }
+        },
+        methods: {
+            // desc is changed only in the header as it is a primitive type
+            changeDesc : function(){
+                this.desc = 'Data transfered from App.vue to Header.vue using props' 
+            }
         }
     }
-}
 </script>
 
 
 <style scoped>
-header {
-    background: lightgreen;
-    padding:10px;
-}
-h1 ,h3 {
-    color: #222;
-    text-align: center;
-}
-
+    header {
+        background: lightgreen;
+        padding:10px;
+    }
+    h1 ,h3 {
+        color: #222;
+        text-align: center;
+    }
 </style>

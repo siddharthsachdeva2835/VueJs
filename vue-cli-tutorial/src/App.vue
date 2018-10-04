@@ -2,7 +2,7 @@
   <div id="app">
    <app-header :desc="desc"></app-header>
    <todo-list></todo-list>
-   <app-footer></app-footer>
+   <app-footer :desc="desc"></app-footer>
   </div>
 </template>
 
